@@ -6,12 +6,15 @@ from dotenv import load_dotenv
 
 from handlers.start import router as start_router
 from handlers.quote import router as quote_router
+from database.db import init_db
 
 load_dotenv()
 
 TOKEN = os.getenv('BOT_TOKEN')
 if not TOKEN:
     raise ValueError("Токен не найден! Проверь .env файл")
+
+init_db()
 
 dp = Dispatcher()
 dp.include_router(start_router)
