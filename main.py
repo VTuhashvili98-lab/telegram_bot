@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 
 from handlers.start import router as start_router
 from handlers.quote import router as quote_router
+from handlers.quote_button import router as quote_button_router
 from database.db import init_db
 
 load_dotenv()
@@ -19,6 +20,7 @@ init_db()
 dp = Dispatcher()
 dp.include_router(start_router)
 dp.include_router(quote_router)
+dp.include_router(quote_button_router)
 
 
 async def main():
