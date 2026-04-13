@@ -10,6 +10,7 @@ def init_db():
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         telegram_id INTEGER UNIQUE,
         is_subscribed INTEGER DEFAULT 0,
-        send_time TEXT
+        send_time TEXT,
+        last_quote_index INTEGER DEFAULT 0
         )
         """)
