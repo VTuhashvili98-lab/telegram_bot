@@ -1,6 +1,6 @@
 from aiogram import Router, F
 from aiogram.types import Message
-from services.quotes import get_random_quote
+from services.quote_list import get_random_quote
 
 router = Router()
 
